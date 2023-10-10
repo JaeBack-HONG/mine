@@ -38,10 +38,6 @@ public class ItemTag : MonoBehaviour
 
         }
     }
-
-    
-    
-
-
+    // 깃허브 테스트
 
 }
