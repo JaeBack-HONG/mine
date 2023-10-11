@@ -94,7 +94,7 @@ public class PlayerTag : MonoBehaviour
                     {
                         isdrill = true;
                         Vector3Int cellposition = tilemap.WorldToCell(hit.point);
-                        DamageTile(cellposition);                        
+                        DamageTile(cellposition);
                     }                            
                 }
             }
