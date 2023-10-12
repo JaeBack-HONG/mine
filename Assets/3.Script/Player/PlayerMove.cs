@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    bool gameOver = GameManager.isGameOver;
-
+    
     public float MoveSpeed = 10f;
     public float YmoveSpeed = 1f;
         
@@ -34,10 +33,9 @@ public class PlayerMove : MonoBehaviour
     
     private void Update()
     {
-        
+                
             playerMove();
-        
-        
+                      
     }
     public void playerMove()
     {                

@@ -7,4 +7,5 @@ public class SlotData
 {
     public bool isEmpty;
     public GameObject slotObj;
+    
 }

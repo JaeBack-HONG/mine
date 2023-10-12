@@ -21,7 +21,11 @@ public class DisplayUI : MonoBehaviour
     public Text boosterData;
     public Text DiggingData;
     public Text OxygenData;
-    public Text HP_Data;   
+    public Text HP_Data;
+    public Text Money_Data;
+
+    public static int TotalMoney = 0;
+    public static int playerMoney = 0;
 
     private void Start()
     {       
@@ -34,8 +38,10 @@ public class DisplayUI : MonoBehaviour
         playerData = FindObjectOfType<PlayerData>();
     }
     private void Update()
-    {               
-        PlayerDataText();               
+    {
+        
+        PlayerDataText();
+        
     }
     private void PlayerDataText()
     {
@@ -51,10 +57,12 @@ public class DisplayUI : MonoBehaviour
         DiggingData.text = DiggingSpeed.ToString("F2")+"/s";
         OxygenData.text = OxygenReduction.ToString("")+ " / 500";
         HP_Data.text = Player_HP.ToString("")+" / 100";
+        Money_Data.text = playerMoney.ToString("");
     }    
     void Inventory_UI()
     {
-        InventoryUI.SetActive(!InventoryUI.activeSelf);        
+        
+        InventoryUI.SetActive(!InventoryUI.activeSelf);
     }
 
 }

@@ -13,7 +13,8 @@ public class PlayerTag : MonoBehaviour
     private Dictionary<Vector3Int, int> tileHealths;//타일맵 정보
     Animator animator;
 
-    bool gameOver = GameManager.isGameOver;
+    [Header("PlayerMove")]
+    public GameObject playermove;
 
     //타일 이미지
     [SerializeField] private Tile[] TileImage;
@@ -27,7 +28,10 @@ public class PlayerTag : MonoBehaviour
     private void Start()
     {
         tileHealths = new Dictionary<Vector3Int, int>();
-        animator = GetComponent<Animator>();    
+        animator = GetComponent<Animator>();
+        playermove = GameObject.FindWithTag("Player");
+        PlayerMove playerMove = playermove.GetComponent<PlayerMove>();
+         
     }    
 
     private void Update()
@@ -50,10 +54,15 @@ public class PlayerTag : MonoBehaviour
     {
         isdrill = false;
         isdrillDown = false;
+
+        
+;
         
         if (lastDelay >= fristDelay)
         {
             Vector2 ray = Vector2.zero;
+
+            
 
             if (Input.GetKey(KeyCode.DownArrow))
             {                
@@ -78,6 +87,7 @@ public class PlayerTag : MonoBehaviour
 
                 if (hit.collider != null && hit.collider.CompareTag("Tile"))
                 {
+                    
                     if (ray== Vector2.down)
                     {
                         isdrillDown = true;
@@ -98,11 +108,13 @@ public class PlayerTag : MonoBehaviour
                     }                            
                 }
             }
-            lastDelay = 0f;
             animator.SetBool("is drill", isdrill);
             animator.SetBool("is drill down", isdrillDown);            
+            lastDelay = 0f;
+            
         }
         lastDelay += Time.deltaTime;
+        
     }
     private void DamageTile(Vector3Int cellPosition)
     {                  
