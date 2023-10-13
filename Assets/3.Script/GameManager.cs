@@ -48,7 +48,10 @@ public class GameManager : MonoBehaviour
 
     void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        PickUPItem.P_gemPrice = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);      
+    
     }
     void Exit()
     {
@@ -68,6 +71,13 @@ public class GameManager : MonoBehaviour
             isGameOver = true;
             gameOverUI.SetActive(true);
             player.SetActive(false);
+        }
+        else if (PickUPItem.P_gemPrice == true)
+        {
+            isGameOver = true;
+            gameOverUI.SetActive(true);
+            player.SetActive(false);
+
         }
     }
 }

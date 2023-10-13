@@ -41,7 +41,15 @@ public class DisplayUI : MonoBehaviour
     {
         
         PlayerDataText();
+        InventroyKey();
         
+    }
+    private void InventroyKey()
+    {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            Inventory_UI();
+        }
     }
     private void PlayerDataText()
     {

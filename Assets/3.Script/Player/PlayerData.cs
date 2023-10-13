@@ -7,6 +7,9 @@ public class PlayerData : MonoBehaviour
 {
     public int Player_HP = 100;
     public int Player_Oxygen = 500;
+    //보석 위치 Y = -75.81
+    
+
 
     public float fristDelay = 1f;
     private float lastDelay = 0f;
@@ -15,10 +18,25 @@ public class PlayerData : MonoBehaviour
 
     public Slider HPslider;
     public Slider OxygenSlider;
-   
+    public Slider deepSlider;
+
+
     private void Update()
     {
-        decreaseOxygen();        
+
+        decreaseOxygen();
+        playerDeep();
+    }
+    void playerDeep()
+    {
+        Transform Player_Y = player.transform;
+        float playerY = Player_Y.position.y;
+        
+        deepSlider.value = 76 + playerY;
+        Debug.Log("슬라이더 바" + deepSlider.value);
+
+
+
     }
     void decreaseOxygen()
     {

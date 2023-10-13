@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 67c0b552e977cfb4abb36aae33975bfc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -97,6 +97,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotItem: {fileID: 1677021662099904449, guid: d4c55ff76a685a8429c5a3da25501d0c, type: 3}
+  R_gemPrice: 100
+  O_gemPrice: 200
+  Y_gemPrice: 400
+  G_gemPrice: 600
+  B_gemPrice: 1000
+  Total: 0
 --- !u!61 &-6210933257900112053
 BoxCollider2D:
   m_ObjectHideFlags: 0

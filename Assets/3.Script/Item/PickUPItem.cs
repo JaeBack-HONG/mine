@@ -22,7 +22,7 @@ public class PickUPItem : MonoBehaviour
     public int Y_gemPrice = 400;
     public int G_gemPrice = 600;
     public int B_gemPrice = 1000;
-    public int P_gemPrice = 10000;
+    public static bool P_gemPrice = false;
 
     public int Total = DisplayUI.TotalMoney;
     private void OnTriggerEnter2D(Collider2D col)
@@ -34,7 +34,7 @@ public class PickUPItem : MonoBehaviour
             {                
                 if (inven.slots[i].isEmpty)
                 {
-                    switch (slotItem.name)
+                    switch (slotItem.name) //asdf
                     {
                         case "R_GemUI":
                             Total += R_gemPrice;
@@ -50,6 +50,9 @@ public class PickUPItem : MonoBehaviour
                             break;
                         case "B_GemUI":
                             Total += B_gemPrice;
+                            break;
+                        case "P_GemUI":
+                            P_gemPrice = true;
                             break;
                         
                     }
